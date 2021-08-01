@@ -1,0 +1,29 @@
+[
+    {
+        "desc": "Nasoya extra firm tofu",
+        "name": "tofu",
+        "cal": 80,
+        "gram": 85,
+        "protein": 8,
+        "fat": 5,
+        "carb": 2
+    }, 
+    {
+        "desc": "White onions, raw",
+        "name": "onions (white)",
+        "cal": 36,
+        "gram": 100,
+        "protein": 0.89,
+        "fat": 0.13,
+        "carb": 7.68
+    },
+    {
+        "desc": "Gala apple",
+        "name": "apple (gala)",
+        "cal": 61,
+        "gram": 100,
+        "protein": 0.13,
+        "fat": 0.15,
+        "carb": 14.8
+    }
+]
