@@ -4,7 +4,7 @@
 
 	const e = ['cal','protein','fat','carb'];
     let amt = "";
-	let val = 'None';
+	let val = "";
     let total_amt = 0;
     $: item_opts = ($itemDb).map(e => ({ name: e.name, text: e.name}));
     $: total_amt_v = Number(total_amt);
@@ -19,7 +19,17 @@
     }
     
     function onClick() {
+        if(!amt || !val) return;
         activeItems.update(u => u.concat({ name: val, amt: amt}));
+        amt = '';
+    }
+    function onDel(name) {
+        activeItems.update(u => {
+            const cp = [...u];
+            const idx = cp.map(d=>d.name).indexOf(name);
+            cp.splice(idx, 1);
+            return cp;
+        })
     }
 </script>
 
@@ -52,7 +62,7 @@
         <div class="col">
             <ul class="list-group opts">
                 {#each $activeItems as i}
-                    <li class="list-group-item">{i.name} ({i.amt} g)</li>
+                    <li class="list-group-item"><button class="btn btn-danger" on:click={() => onDel(i.name)}>X</button>{i.name} ({i.amt} g) </li>
                 {/each}
             </ul>
         </div>
