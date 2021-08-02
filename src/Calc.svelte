@@ -6,7 +6,7 @@
     let amt = "";
 	let val = "";
     let total_amt = 0;
-    $: item_opts = ($itemDb).map(e => ({ name: e.name, text: e.name}));
+    $: item_opts = ($itemDb).map(e => ({ name: e.name, text: e.desc}));
     $: total_amt_v = Number(total_amt);
     $: per_g_stats = {
             cal: $totalStats.cal / total_amt_v,
@@ -47,7 +47,7 @@
                 />
             </div>
             <div class="col-lg-2">
-                <input type="text" class="form-control" 
+                <input type="number" class="form-control" 
                     bind:value={amt} placeholder="Amount, g"
                 />
             </div>
@@ -62,7 +62,7 @@
         <div class="col">
             <ul class="list-group opts">
                 {#each $activeItems as i}
-                    <li class="list-group-item"><button class="btn btn-danger" on:click={() => onDel(i.name)}>X</button>{i.name} ({i.amt} g) </li>
+                    <li class="list-group-item"><button class="btn btn-danger" on:click={() => onDel(i.name)}>X</button>&emsp;{i.name} ({i.amt} g) </li>
                 {/each}
             </ul>
         </div>
@@ -74,7 +74,8 @@
             <div class="col">
                 <h5 class="card-header">Current stats:</h5>
                 <h6>Set total weight</h6>
-                <input type="text" bind:value={total_amt} placeholder="Total dish amount, g" />
+                <input type="number" class="form-control"
+                    bind:value={total_amt} placeholder="Total dish amount, g" />
                 <table class="table table-striped">
                     <thead>
                         <tr>

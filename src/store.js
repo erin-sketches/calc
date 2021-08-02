@@ -3,8 +3,8 @@ import dat from './itemDb.json';
 
 // helpers to get/set from storage
 function getStored(key, init_value) {
-    //const d = localStorage.getItem(key);
-    //if(d) return JSON.parse(d);
+    const d = localStorage.getItem(key);
+    if(d) return JSON.parse(d);
     return init_value;
 }
 function setStored(value, key) {
