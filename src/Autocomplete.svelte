@@ -17,27 +17,31 @@ let showOpts = false;
 </script>
 
 <div
-    on:blur={()=>{showOpts=false;}}
-    on:click={()=>{showOpts=true;}}
-    on:focus={()=>{showOpts=true;}}
+    on:blur={()=>showOpts=false}
+    on:focus={()=>showOpts=true}
 >
-<input type="text" class="form-control" 
-    bind:value={q}
-    placeholder={placeholder} 
-/>
-{#if showOpts}
-    <ul class="list-group opts">
-    {#each opts as opt}
-        <li class="list-group-item" on:click={() => {
-            console.log(opt);
-            onChange(opt.name);
-        }}>{opt.text}</li>
-    {/each}
-    </ul>
-{/if}
+    <input type="text" class="form-control" 
+        bind:value={q}
+        on:focus={()=>showOpts=true}
+        on:change={onChange(q)}
+        placeholder={placeholder} 
+    />
+    {#if showOpts}
+        <ul class="list-group opts">
+        {#each opts as opt}
+            <li class="list-group-item" on:click={() => {
+                onChange(opt.name);
+                q = opt.name;
+                showOpts = false;
+            }}>{opt.text}</li>
+        {/each}
+        </ul>
+    {/if}
 </div>
 <style>
     .opts {
         z-index: 999;
+        position: absolute;
+        min-width: 100px;
     }
 </style>

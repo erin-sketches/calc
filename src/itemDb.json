@@ -25,5 +25,14 @@
         "protein": 0.13,
         "fat": 0.15,
         "carb": 14.8
+    },
+    {
+        "desc": "Calories (uncategorized)",
+        "name": "calories",
+        "cal": 1,
+        "gram": 1,
+        "protein": 0,
+        "fat": 0,
+        "carb": 0
     }
 ]
