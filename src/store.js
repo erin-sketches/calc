@@ -12,7 +12,7 @@ function setStored(value, key) {
 }
 
 // item database
-export const itemDb = writable(getStored('itemDb',dat));
+export const itemDb = writable(dat);
 itemDb.subscribe(value => setStored(value,'itemDb'));
 export const itemLookup = derived(itemDb, 
     $itemDb => {

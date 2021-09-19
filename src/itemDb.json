@@ -106,5 +106,50 @@
         "protein": 0,
         "fat": 0,
         "carb": 2
+    },
+    {
+        "desc": "Russet Potato",
+        "name": "russet potato",
+        "cal": 79,
+        "gram": 100,
+        "protein": 2,
+        "fat": 0,
+        "carb": 18 
+    },
+    {
+        "desc": "Carrot",
+        "name": "carrot",
+        "cal": 41,
+        "gram": 100,
+        "protein": 0.93,
+        "fat": 0,
+        "carb": 9.58 
+    },
+    {
+        "desc": "Impossible beef",
+        "name": "impossible beef",
+        "cal": 240, 
+        "gram": 113,
+        "protein": 19,
+        "fat": 14,
+        "carb": 9 
+    },
+    {
+        "desc": "Golden Curry Block (Hot) (216g = whole 12 servings)",
+        "name": "golden curry",
+        "cal": 90, 
+        "gram": 18,
+        "protein": 1,
+        "fat": 4.5,
+        "carb": 10 
+    },
+    {
+        "desc": "Canned corn, with liquid (432g = whole can)",
+        "name": "canned corn",
+        "cal": 60, 
+        "gram": 125,
+        "protein": 1,
+        "fat": 1,
+        "carb": 13 
     }
 ]
